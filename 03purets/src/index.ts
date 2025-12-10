@@ -1,15 +1,19 @@
 //Classes in Typescript
 
-class User {
-  email: string;
-  name: string;
-  city: string = "";
+// class User {
+//   public email: string;
+//   name: string;
+//   private readonly city: string = "New Delhi";
 
-  constructor(email: string, name: string) {
-    this.email = email;
-    this.name = name;
-  }
+//   constructor(email: string, name: string) {
+//     this.email = email;
+//     this.name = name;
+//   }
+// }
+
+class User {
+  readonly city: string = "New Delhi";
+  constructor(public email: string, public name: string) {}
 }
 
 const aviral = new User("aviral@example.com", "Aviral");
-aviral.city = "New Delhi";
