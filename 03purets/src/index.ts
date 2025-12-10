@@ -12,7 +12,7 @@
 // }
 
 class User {
-  private _courseCount = 1;
+  protected _courseCount = 1;
   readonly city: string = "New Delhi";
   constructor(public email: string, public name: string) {}
 
@@ -39,3 +39,12 @@ class User {
 }
 
 const aviral = new User("aviral@example.com", "Aviral");
+
+class SubUser extends User {
+
+  //by default variables are public in ts
+  isFamily: boolean = true;
+  changeCourseCount() {
+    this._courseCount = 4;
+  }
+}
