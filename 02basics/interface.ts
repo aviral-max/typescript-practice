@@ -7,10 +7,20 @@ interface User {
   getCoupon: (couponName: string) => number;
 }
 
-const aviral: User = {
+interface User {
+  githubToken: string;
+}
+
+interface Admin extends User {
+  role: "admin" | "ta" | "learner";
+}
+
+const aviral: Admin = {
   email: "a@a.com",
   userId: 1,
   dbId: 10,
   startTrial: () => "Trial started",
-  getCoupon: (name: string = "SUMMER10") => 10
+  getCoupon: (name: string = "SUMMER10") => 10,
+  githubToken: "ghp_12345",
+  role: "admin",
 };
