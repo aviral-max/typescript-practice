@@ -6,7 +6,7 @@ const User = {
 
 function createUser({
   name: string,
-  isPaid: boolean,
+  isPaid: boolean
 }: {
   name: string;
   isPaid: boolean;
