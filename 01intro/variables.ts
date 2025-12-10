@@ -11,4 +11,13 @@ let userId = 335566.7;
 //boolean
 let isLoggedIn: boolean = true;
 
+//any - turning off type checking (not recommended)
+let hero: string;
+
+function getHero() {
+  return "Batman";
+}
+
+hero = getHero();
+
 export {};
