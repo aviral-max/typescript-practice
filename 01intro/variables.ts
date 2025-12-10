@@ -5,4 +5,10 @@ myNum.toUpperCase(); // Error: Property 'toUpperCase' does not exist on type 'nu
 greetings.toLowerCase();
 console.log(greetings);
 
+// number
+let userId = 335566.7;
+
+//boolean
+let isLoggedIn: boolean = true;
+
 export {};

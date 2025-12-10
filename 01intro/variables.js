@@ -6,3 +6,7 @@ var myNum = 4;
 myNum.toUpperCase(); // Error: Property 'toUpperCase' does not exist on type 'number'
 greetings.toLowerCase();
 console.log(greetings);
+// number
+var userId = 335566.7;
+//boolean
+var isLoggedIn = true;
