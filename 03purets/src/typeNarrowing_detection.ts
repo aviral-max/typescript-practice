@@ -26,3 +26,21 @@ function printAll(strs: string | string[] | null) {
     }
   }
 }
+
+interface User {
+  name: string;
+  email: string;
+}
+
+interface Admin {
+  name: string;
+  email: string;
+  isAdmin: boolean;
+}
+
+function isAdminAccount(account: User | Admin) {
+  // return account.isAdmin; // Error: Property 'isAdmin' does not exist on type 'User'.
+  if ("isAdmin" in account) {
+    return account.isAdmin;
+  }
+}
