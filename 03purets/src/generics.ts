@@ -26,7 +26,7 @@ identityThree<Bottle>({ brand: "CocaCola", type: 1 });
 function getSearchProducts<T>(products: T[]): T {
   //do some database operations
   const myIndex = 3;
-  if(products[myIndex] === undefined){
+  if (products[myIndex] === undefined) {
     throw new Error("Product not found at index " + myIndex);
   }
   return products[myIndex];
@@ -34,8 +34,52 @@ function getSearchProducts<T>(products: T[]): T {
 
 const getMoreSearchProducts = <T>(products: T[]): T => {
   const myIndex = 4;
-  if(products[myIndex] === undefined){
+  if (products[myIndex] === undefined) {
     throw new Error("Product not found at index " + myIndex);
   }
   return products[myIndex];
 };
+
+interface Database {
+  connection: string;
+  username: string;
+  password: string;
+}
+
+function anotherFunction<T, U extends Database>(
+  valueOne: T,
+  valueTwo: U
+): object {
+  return {
+    valueOne,
+    valueTwo,
+  };
+}
+
+anotherFunction<number, string>(100, "Aviral"); // Error: Type 'string' does not satisfy the constraint 'number'.
+anotherFunction<number, Database>(100, {
+  // Valid
+  connection: "localhost",
+  username: "root",
+  password: "password",
+  token: "abcd", // Error: Object literal may only specify known properties, and 'token' does not exist in type 'Database'.
+});
+
+interface Quiz {
+    name: string;
+    type: string;
+}
+
+interface Course {
+    name: string;
+    author: string;
+    subject: string;
+}
+
+class Sellable<T>{
+    public cart: T[] = [];
+
+    addToCart(product: T) {
+        this.cart.push(product);
+    }
+}
